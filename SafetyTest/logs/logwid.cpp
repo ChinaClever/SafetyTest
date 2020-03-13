@@ -1,4 +1,4 @@
-#include "logwid.h"
+﻿#include "logwid.h"
 #include "dblogs.h"
 
 LogWid::LogWid(QWidget *parent) : LogComWid(parent)

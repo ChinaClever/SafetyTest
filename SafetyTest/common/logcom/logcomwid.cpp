@@ -94,8 +94,14 @@ bool LogComWid::refreshTable(const QString &table)
 {
     bool ret = model->refreshTable(table);
     if(ret) {
+        int i = 4;
         ui->tableView->sortByColumn(0, Qt::DescendingOrder); // 降序排列
         setColumnHidden(0);
+        setColumnHidden(i++);
+        setColumnHidden(i++);
+        setColumnHidden(i++);
+        setColumnHidden(i++);
+
     }
     return  ret;
 }
@@ -129,7 +135,7 @@ void LogComWid::clearTableSlot()
  */
 void LogComWid::doubleSlot(QModelIndex)
 {
-    QString str = tr("是否删除这条纪录?");
+    QString str = tr("是否删除这条记录?");
     QuMsgBox box(this, str);
     bool ret = box.Exec();
     if(ret)
