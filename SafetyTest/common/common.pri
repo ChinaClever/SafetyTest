@@ -1,7 +1,7 @@
 
 INCLUDEPATH += $$PWD
 
-include(quc/quc.pri)
+//include(quc/quc.pri)
 include(excel/excel.pri)
 include(chars/chars.pri)
 include(logcom/logcom.pri)

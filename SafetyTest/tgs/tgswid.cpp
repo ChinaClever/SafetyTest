@@ -38,7 +38,7 @@ void TgsWid::updateData(int all, int ok)
 
     double value = 0;
     if(all) value = (ok*100.0) / all;
-    ui->gaugeArc2->setValue(value);
+    ui->progressBar->setValue(value);
 }
 
 int TgsWid::workDown()

@@ -67,6 +67,7 @@
          <string notr="true">QWidget#widget{border-radius:5px;}
 QWidget{font: 15pt &quot;微软雅黑&quot;; color:white;}
 QWidget#snLab{font: 15pt &quot;微软雅黑&quot;; color:black;}
+QWidget#progressBar{font: 15pt &quot;微软雅黑&quot;; color:black;}
 QWidget#itemNumLab{font: 15pt &quot;微软雅黑&quot;; color:black;}
 QWidget#statusLab{font: 15pt &quot;微软雅黑&quot;; color:black;}
 QWidget#titleTab{font: 15pt &quot;微软雅黑&quot;; color:black;}
@@ -109,7 +110,23 @@ QProgressBar {
               <number>0</number>
              </property>
              <item>
-              <widget class="ProgressWater" name="progressWater"/>
+              <widget class="QProgressBar" name="progressBar">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="value">
+                <number>0</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="textDirection">
+                <enum>QProgressBar::TopToBottom</enum>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QPushButton" name="startBtn">
@@ -291,13 +308,6 @@ QProgressBar {
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>ProgressWater</class>
-   <extends>QWidget</extends>
-   <header>progresswater.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

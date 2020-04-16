@@ -282,27 +282,20 @@
     </font>
    </property>
   </widget>
-  <widget class="GaugePercent" name="gaugeArc2">
+  <widget class="QProgressBar" name="progressBar">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>160</y>
-     <width>200</width>
-     <height>200</height>
+     <x>27</x>
+     <y>192</y>
+     <width>291</width>
+     <height>31</height>
     </rect>
    </property>
-   <property name="title">
-    <string>通过率</string>
+   <property name="value">
+    <number>0</number>
    </property>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>GaugePercent</class>
-   <extends>QWidget</extends>
-   <header>gaugepercent.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

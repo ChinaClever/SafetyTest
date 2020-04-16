@@ -1,4 +1,4 @@
-/*
+﻿/*
  *
  *
  *  Created on: 2018年10月1日
@@ -18,6 +18,10 @@ TestResultWid::TestResultWid(QWidget *parent) :
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this, SLOT(progressSlot()));
+
+    QPalette palette;
+    palette.setColor(QPalette::WindowText,Qt::black);
+    ui->progressBar->setPalette(palette);
 }
 
 TestResultWid::~TestResultWid()
@@ -40,9 +44,8 @@ void TestResultWid::startSlot()
 
     ui->itemNumLab->clear();
     ui->statusLab->clear();
-    ui->progressWater->setValue(0);
-    ui->progressWater->setBgColor(Qt::green);
-    ui->progressWater->setUsedColor(Qt::green);
+    ui->progressBar->setValue(0);
+    ui->progressBar->setStyleSheet("QProgressBar::chunk {background-color:green;}");
 
     timer->start(200);
     ui->startBtn->setText(tr("停止测试"));
@@ -62,7 +65,7 @@ void TestResultWid::resultSlot()
     ui->startBtn->setText(tr("立即测试"));
     if(!p)
     {
-        ui->progressWater->setUsedColor(Qt::red);
+        ui->progressBar->setStyleSheet("QProgressBar::chunk {background-color:red;}");
         ui->statusLab->setText(tr("测试失败!!!"));
     }
     else
@@ -74,13 +77,13 @@ void TestResultWid::progressSlot()
     sTestProgress *arg = &(mItem->progress);
 
     int progress = (arg->finishNum * 100.0) / arg->allNum;
-    ui->progressWater->setValue(progress);
+    ui->progressBar->setValue(progress);
     ui->statusLab->setText(arg->status);
 
     QPalette pe;
     pe.setColor(QPalette::WindowText,Qt::black);
     int ok = (arg->okNum * 100.0) / arg->allNum;
-    if(arg->errNum)  {pe.setColor(QPalette::WindowText,Qt::red);ui->progressWater->setBgColor(Qt::red);}
+    if(arg->errNum)  {pe.setColor(QPalette::WindowText,Qt::red);ui->progressBar->setStyleSheet("QProgressBar::chunk {background-color:red;}");}
     QString str = tr("测试项目数:%1  失败项目数：%2  项目测试通过率：%3%").arg(arg->allNum).arg(arg->errNum).arg(ok);
     ui->itemNumLab->setText(str);
     ui->itemNumLab->setPalette(pe);
