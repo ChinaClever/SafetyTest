@@ -1,4 +1,4 @@
-/*
+﻿/*
  *
  *
  *  Created on: 2018年10月1日
@@ -18,6 +18,10 @@ TestResultWid::TestResultWid(QWidget *parent) :
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this, SLOT(progressSlot()));
+
+    QPalette palette;
+    palette.setColor(QPalette::WindowText,Qt::black);
+    ui->progressBar->setPalette(palette);
 }
 
 TestResultWid::~TestResultWid()
@@ -65,6 +69,7 @@ void TestResultWid::resultSlot()
         //ui->progressWater->setUsedColor(Qt::red);
         //ui->progressBar->setBgColor(Qt::red);
         ui->progressBar->setStyleSheet("QProgressBar {border:2px solid;background-color:transparent;border-radius: 5px;text-align: center;color:red;}" );
+
         ui->statusLab->setText(tr("测试失败!!!"));
     }
     else

@@ -67,6 +67,7 @@
          <string notr="true">QWidget#widget{border-radius:5px;}
 QWidget{font: 15pt &quot;微软雅黑&quot;; color:white;}
 QWidget#snLab{font: 15pt &quot;微软雅黑&quot;; color:black;}
+QWidget#progressBar{font: 15pt &quot;微软雅黑&quot;; color:black;}
 QWidget#itemNumLab{font: 15pt &quot;微软雅黑&quot;; color:black;}
 QWidget#statusLab{font: 15pt &quot;微软雅黑&quot;; color:black;}
 QWidget#titleTab{font: 15pt &quot;微软雅黑&quot;; color:black;}
