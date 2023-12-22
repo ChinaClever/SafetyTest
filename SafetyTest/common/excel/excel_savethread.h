@@ -1,7 +1,7 @@
 #ifndef EXCEL_SAVETHREAD_H
 #define EXCEL_SAVETHREAD_H
 
-#include "qexcel.h"
+//#include "qexcel.h"
 #include <QtCore>
 
 class Excel_SaveThread : public QThread

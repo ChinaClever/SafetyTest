@@ -109,7 +109,11 @@ QProgressBar {
               <number>0</number>
              </property>
              <item>
-              <widget class="ProgressWater" name="progressWater"/>
+              <widget class="QProgressBar" name="progressBar">
+               <property name="value">
+                <number>24</number>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QPushButton" name="startBtn">
@@ -291,13 +295,6 @@ QProgressBar {
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>ProgressWater</class>
-   <extends>QWidget</extends>
-   <header>progresswater.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

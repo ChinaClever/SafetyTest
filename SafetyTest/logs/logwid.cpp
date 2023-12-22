@@ -24,7 +24,7 @@ void LogWid::initTable()
     QString table = getDb()->tableName();
     this->refreshTable(table);
 
-    mTableTile = tr("测试纪录日志");
+    mTableTile = tr("测试记录日志");
     setGroupBoxTitle(mTableTile);
 
     mHeadList.clear();

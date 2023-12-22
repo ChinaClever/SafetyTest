@@ -38,7 +38,8 @@ void TgsWid::updateData(int all, int ok)
 
     double value = 0;
     if(all) value = (ok*100.0) / all;
-    ui->gaugeArc2->setValue(value);
+    //ui->gaugeArc2->setValue(value);
+    ui->passlabel->setText(QString::number(value,'g',1));
 }
 
 int TgsWid::workDown()

@@ -3,7 +3,7 @@ INCLUDEPATH += $$PWD/basicExcel/
 
 win32: {
     QT += axcontainer
-    LIBS += -L$$PWD/lib/ -licom
+#    LIBS += -L$$PWD/lib/ -licom
 #    CONFIG += qaxcontainer
 } else: {
 }
